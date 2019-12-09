@@ -2,29 +2,18 @@
 
 function strBuilder(greeting) {
 
-	function b(x) {
+	return	(function b(x) {
+			
+		 function g(y) {
+			 if ( y == undefined) {
+				 return x;
+			 } else {
+				 return b(x+y);
+			 }
+		 }
 
-		if (x == undefined) {
-			return greeting;
-		}
-
-
-		// c
-		return function(y) {
-			if ( y == undefined) {
-				return greeting+x;
-			}
-
-			return function(z) {
-				if ( z == undefined) {
-					return greeting+x+y;
-				}
-					return greeting+x+y;
-
-			}
-		}
-	}
-	return b;
+		return g
+	})(greeting)
 }
 
 
@@ -34,7 +23,7 @@ var susan = hello("Susan");
 var question = kyle("?")();
 var greeting = susan("!")();
 
-// console.log(strBuilder("Hello, ")("")("Kyle")(".")("")() === "Hello, Kyle.");
+console.log(strBuilder("Hello, ")("")("Kyle")(".")("")() === "Hello, Kyle.");
 console.log(hello());
 console.log(hello() === "Hello, ");
 console.log(kyle() === "Hello, Kyle");
