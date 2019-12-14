@@ -32,3 +32,15 @@ const expect = x => ({
   console.log('end nu?')
   expect(sum4(1, 2) (3) (4)).toBe(10);
   console.log('The end.');
+
+
+  function add(a, b) {
+    return a+b;
+  }
+
+  function square(x) {
+    return x*x;
+  }
+
+  console.log('length of add: '+ add.length);
+  console.log('length of square: '+ square.length);
